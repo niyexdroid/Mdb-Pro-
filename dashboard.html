@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="mdb/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="mdb/css/mdb.min.css">
+	<link rel="stylesheet" type="text/css" href="mdb/css/style.css">
+	<script src="mdb/js/jquery-3.3.1.min.js"></script>
+	<script src="mdb/js/popper.min.js"></script>
+	<script src="mdb/js/bootstrap.min.js"></script>
+</head>
+<body  class="fixed-sn light-blue-skin">
+	<!--Main Navigation-->
+	<header>
+		<!-- SideNav slide-out button -->
+		  <!-- <a href="#" data-activates="slide-out" class="btn btn-primary p-3 button-collapse"><i class="fa fa-bars"></i></a> -->
+		  <!--Navbar-->
+			<nav class="navbar navbar-expand-lg navbar-dark primary-color double-nav">
+
+			   <!-- SideNav slide-out button -->
+				  <div class="float-left">
+				      <a href="#" data-activates="slide-out" class="button-collapse">
+				      		<i class="fa fa-bars">ppp</i>
+				      </a>		
+				      	<div class="breadcrumb-dn mr-auto">
+    						<p>Booust Voting system admin dashboard </p>
+						</div>
+				      
+				  </div>
+
+						<!-- Links  <a href="{!! url('/register')!!}">Register</a>-->
+						
+				  <ul class="nav navbar-nav nav-flex-icons ml-auto">
+						    <li class="nav-item">
+						        <a class="nav-link">
+						            <i class="fa fa-envelope"></i>
+						            <span class="clearfix d-none d-sm-inline-block">Contact</span>
+						        </a>
+						    </li>
+						    <li class="nav-item">
+						        <a class="nav-link">
+						            <i class="fa fa-gear"></i>
+						            <span class="clearfix d-none d-sm-inline-block">Settings</span>
+						        </a>
+						    </li>
+						    <li class="nav-item dropdown">
+						        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						            <i class="fa fa-user"></i>
+						            <span class="clearfix d-none d-sm-inline-block">Account</span>
+						        </a>
+						        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+						            <a class="dropdown-item" href="#">Action</a>
+						            <a class="dropdown-item" href="#">Another action</a>
+						            <a class="dropdown-item" href="#">Something else here</a>
+						        </div>
+						    </li>
+						</ul>
+
+				       
+				  <a class="btn btn-info" onclick="toastr.info('Hi! I am info message.');">Info message</a>   
+			</nav>
+<!--/.Navbar-->
+		  <!-- Sidebar navigation -->
+		  <div id="slide-out" class="side-nav fixed">
+		      <ul class="custom-scrollbar">
+		          <!-- Logo -->
+		          <li>
+		              <div class="logo-wrapper waves-light">
+		                  <a href="#"><img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center"></a>
+		              </div>
+		          </li>
+		          <!--/. Logo -->
+		          <!--Social-->
+		          <li>
+		              <ul class="social">
+		                  <li><a href="#" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
+		                  <li><a href="#" class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i></a></li>
+		                  <li><a href="#" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
+		                  <li><a href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a></li>
+		              </ul>
+		          </li>
+		          <!--/Social-->
+		          <!--Search Form-->
+		          <!-- <li>
+		              <form class="search-form" role="search">
+		                  <div class="form-group md-form mt-0 pt-1 waves-light">
+		                      <input type="text" class="form-control" placeholder="Search">
+		                  </div>
+		              </form>
+		          </li> -->
+		          <!--/.Search Form-->
+		          <!-- Side navigation links -->
+		          <li>
+		              <ul class="collapsible collapsible-accordion">
+		                  <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-chevron-right"></i>
+		                          All users<i class="fa fa-angle-down rotate-icon"></i></a>
+		                      <div class="collapsible-body">
+		                          <ul>
+		                              <li><a href="#" class="waves-effect">Submit listing</a>
+		                              </li>
+		                              <li><a href="#" class="waves-effect">Registration form</a>
+		                              </li>
+		                          </ul>
+		                      </div>
+		                  </li>
+		                  <li><a class="collapsible-header waves-effect arrow-r"href="{!! url('/elections')!!}><i class="fa fa-hand-pointer-o"></i>
+		                          Profile<i class="fa fa-angle-down rotate-icon"></i></a>
+		                     \
+		                  </li>
+		                  <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-eye"></i>Elections<i class="fa fa-angle-down rotate-icon"></i></a>
+		                      <div class="collapsible-body">
+		                          <ul>
+		                              <li><a href="#" class="waves-effect">New Election</a>
+		                              </li>
+		                              <li><a href="#" class="waves-effect">View Result</a>
+		                              </li>
+		                          </ul>
+		                      </div>
+		                  </li>
+		                  <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-envelope-o"></i> Contact
+		                          me<i class="fa fa-angle-down rotate-icon"></i></a>
+		                      <div class="collapsible-body">
+		                          <ul>
+		                              <li><a href="#" class="waves-effect">FAQ</a>
+		                              </li>
+		                              <li><a href="#" class="waves-effect">Write a message</a>
+		                              </li>
+		                              <li><a href="#" class="waves-effect">FAQ</a>
+		                              </li>
+		                              <li><a href="#" class="waves-effect">Write a message</a>
+		                              </li>
+		                              <li><a href="#" class="waves-effect">FAQ</a>
+		                              </li>
+		                              <li><a href="#" class="waves-effect">Write a message</a>
+		                              </li>
+		                              <li><a href="#" class="waves-effect">FAQ</a>
+		                              </li>
+		                              <li><a href="#" class="waves-effect">Write a message</a>
+		                              </li>
+		                          </ul>
+		                      </div>
+		                  </li>
+		              </ul>
+		          </li>
+		          <!--/. Side navigation links -->
+		      </ul>
+		      <div class="sidenav-bg rgba-blue-strong"></div>
+		  </div>
+  <!--/. Sidebar navigation -->
+	</header>
+	<!--Main Navigation-->
+
+	<!--Main layout-->
+	<main>
+		<div class="container-fluid">
+
+        <!--Section: Modals-->
+        <section>
+
+
+
+        </section>
+        <!--Section: Modals-->
+
+        <!--Section: Main panel-->
+      <section class="card card-cascade narrower mb-5">
+      		 <!--Grid row-->
+		    <div class="row">
+
+		    <!--Grid column-->
+		    <div class="col-md-5">
+		    	    <!--Panel Header-->
+			    <div class="view py-3 gradient-card-header info-color-dark">
+			        <h5 class="mb-0">Sales</h5>
+			    </div>
+			    <!--/Panel Header-->
+
+			    <!--Panel content-->
+			    <div class="card-body">
+
+			        <!--Grid row-->
+			        <div class="row">
+			        	
+			            <!--Grid column-->
+			            <div class="col-md-6 mb-4">
+
+			            	<p class="lead">
+							  	<span class="badge info-color-dark p-2">Date range</span>
+							</p>
+							<select class="mdb-select colorful-select dropdown-info">
+							  <option value="" disabled selected>Choose time period</option>
+							  <option value="1">Today</option>
+							  <option value="2">Yesterday</option>
+							  <option value="3">Last 7 days</option>
+							  <option value="3">Last 30 days</option>
+							  <option value="3">Last week</option>
+							  <option value="3">Last month</option>
+							</select>
+
+			            </div>
+			            <!--Grid column-->
+
+			            <!--Grid column-->
+			            <div class="col-md-6 mb-4 text-center">
+
+			            		<span class="min-chart my-4" id="chart-sales" data-percent="76">
+								    <span class="percent"></span>
+								</span>
+								<h5>
+								    <span class="badge green p-2">Change
+								        <i class="fa fa-arrow-circle-up ml-1"></i>
+								    </span>
+								    <button type="button" class="btn btn-info btn-sm p-2" data-toggle="tooltip" data-placement="top" title="Percentage change compared to the same period in the past">
+								        <i class="fa fa-question"></i>
+								    </button>
+								</h5
+
+			            </div>
+			            <!--Grid column-->
+
+			        </div>
+			        <!--Grid row-->
+
+			    </div>
+			    <!--Panel content-->
+
+
+		    </div>
+		    <!--Grid column-->
+
+		    <!--Grid column-->
+		    <div class="col-md-7">
+
+
+
+		    </div>
+		    <!--Grid column-->
+
+		    </div>
+		    <!--Grid row-->
+
+      </section>
+        <!--Section: Main panel-->
+
+        <!--Section: Table-->
+        <section class="mb-5">
+
+
+			  <!--Top Table UI-->
+			  <div class="card p-2 mb-5">
+
+			      <!--Grid row-->
+			      <div class="row">
+
+			          <!--Grid column-->
+			          <div class="col-lg-3 col-md-12">
+
+			              <!--Name-->
+			              <select class="mdb-select colorful-select dropdown-primary mx-2">
+			                  <option value="" disabled selected>Bulk actions</option>
+			                  <option value="1">Delate</option>
+			                  <option value="2">Export</option>
+			                  <option value="3">Change segment</option>
+			              </select>
+
+			          </div>
+			          <!--Grid column-->
+
+			          <!--Grid column-->
+			          <div class="col-lg-3 col-md-6">
+
+			              <!--Blue select-->
+			              <select class="mdb-select colorful-select dropdown-primary mx-2">
+			                  <option value="" disabled selected>Show only</option>
+			                  <option value="1">All
+			                      <span> (2000)</span>
+			                  </option>
+			                  <option value="2">Never opened
+			                      <span> (200)</span>
+			                  </option>
+			                  <option value="3">Opened but unanswered
+			                      <span> (1800)</span>
+			                  </option>
+			                  <option value="4">Answered
+			                      <span> (200)</span>
+			                  </option>
+			                  <option value="5">Unsunscribed
+			                      <span> (50)</span>
+			                  </option>
+			              </select>
+			              <!--/Blue select-->
+
+			          </div>
+			          <!--Grid column-->
+
+			          <!--Grid column-->
+			          <div class="col-lg-3 col-md-6">
+
+			              <!--Blue select-->
+			              <select class="mdb-select colorful-select dropdown-primary mx-2">
+			                  <option value="" disabled selected>Filter segments</option>
+			                  <option value="1">Contacts in no segments
+			                      <span> (100)</span>
+			                  </option>
+			                  <option value="1">Segment 1
+			                      <span> (2000)</span>
+			                  </option>
+			                  <option value="2">Segment 2
+			                      <span> (1000)</span>
+			                  </option>
+			                  <option value="3">Segment 3
+			                      <span> (4000)</span>
+			                  </option>
+			              </select>
+			              <!--/Blue select-->
+
+			          </div>
+			          <!--Grid column-->
+
+			          <!--Grid column-->
+			          <div class="col-lg-3 col-md-6">
+
+			              <form class="form-inline mt-2 ml-2">
+			                  <input class="form-control my-0 py-0" type="text" placeholder="Search" style="max-width: 150px;">
+			                  <button class="btn btn-sm btn-info ml-2 px-2">
+			                      <i class="fa fa-search"></i>
+			                  </button>
+			              </form>
+
+			          </div>
+			          <!--Grid column-->
+
+			      </div>
+			      <!--Grid row-->
+
+			  </div>
+			  <!--Top Table UI-->
+			  <!--Card-->
+				<div class="card card-cascade narrower">
+
+				    <!--Card header-->
+				    <div class="view py-3 gradient-card-header info-color-dark mx-4 d-flex justify-content-between align-items-center">
+
+
+				    	<div>
+					      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+					          <i class="fa fa-th-large mt-0"></i>
+					      </button>
+					      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+					          <i class="fa fa-columns mt-0"></i>
+					      </button>
+					  </div>
+
+					  <a href="" class="white-text mx-3">Table name</a>
+
+					  <div>
+					      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+					          <i class="fa fa-pencil mt-0"></i>
+					      </button>
+					      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+					          <i class="fa fa-remove mt-0"></i>
+					      </button>
+					      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+					          <i class="fa fa-info-circle mt-0"></i>
+					      </button>
+					  </div>
+				    </div>
+				    <!--/Card header-->
+
+				    <!--Card content-->
+				    <div class="card-body card-body-cascade">
+				    		<table class="table">
+						    <thead>
+						        <tr>
+						            <th>#</th>
+						            <th>First column</th>
+						            <th>Second column</th>
+						            <th>Third column</th>
+						            <th>Fourth column</th>
+						            <th>Fifth column</th>
+						            <th>Sixth column</th>
+						        </tr>
+						    </thead>
+						    <tbody>
+						        <tr>
+						            <th scope="row">1</th>
+						            <td>Lorem Ipsum</td>
+						            <td>Lorem Ipsum</td>
+						            <td>Lorem Ipsum</td>
+						            <td>Lorem Ipsum</td>
+						            <td>Lorem Ipsum</td>
+						            <td>Lorem Ipsum</td>
+						        </tr>
+						        <tr>
+						            <th scope="row">2</th>
+						            <td>Lorem Ipsum</td>
+						            <td>Lorem Ipsum</td>
+						            <td>Lorem Ipsum</td>
+						            <td>Lorem Ipsum</td>
+						            <td>Lorem Ipsum</td>
+						            <td>Lorem Ipsum</td>
+						        </tr>
+						        <tr>
+						            <th scope="row">3</th>
+						            <td>Lorem Ipsum</td>
+						            <td>Lorem Ipsum</td>
+						            <td>Lorem Ipsum</td>
+						            <td>Lorem Ipsum</td>
+						            <td>Lorem Ipsum</td>
+						            <td>Lorem Ipsum</td>
+						        </tr>
+						    </tbody>
+						</table>
+				    </div>
+				    <!--/.Card content-->
+
+				</div>
+				<!--/.Card-->
+
+
+
+        </section>
+        <!--Section: Table-->
+
+        <!--Section: Accordion-->
+        <section class="mb-5">
+        	 <!--Accordion wrapper-->
+				  <div class="md-accordion accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+				      <!-- Accordion card -->
+				      <div class="card">
+
+				          <!-- Card header -->
+				          <div class="card-header" role="tab" id="headingOne">
+				              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+				                  <h5 class="mb-0">
+				                      Collapsible Group Item #1
+				                      <i class="fa fa-angle-down rotate-icon"></i>
+				                  </h5>
+				              </a>
+				          </div>
+
+				          <!-- Card body -->
+				          <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+				              <div class="card-body">
+				                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+				                  non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+				                  3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+				                  shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+				                  sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+				                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+				                  labore sustainable VHS.
+				              </div>
+				          </div>
+				      </div>
+				      <!-- Accordion card -->
+
+				      <!-- Accordion card -->
+				      <div class="card">
+
+				          <!-- Card header -->
+				          <div class="card-header" role="tab" id="headingTwo">
+				              <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				                  <h5 class="mb-0">
+				                      Collapsible Group Item #2
+				                      <i class="fa fa-angle-down rotate-icon"></i>
+				                  </h5>
+				              </a>
+				          </div>
+
+				          <!-- Card body -->
+				          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+				              <div class="card-body">
+				                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+				                  non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+				                  3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+				                  shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+				                  sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+				                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+				                  labore sustainable VHS.
+				              </div>
+				          </div>
+				      </div>
+				      <!-- Accordion card -->
+
+				      <!-- Accordion card -->
+				      <div class="card">
+
+				          <!-- Card header -->
+				          <div class="card-header" role="tab" id="headingThree">
+				              <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				                  <h5 class="mb-0">
+				                      Collapsible Group Item #3
+				                      <i class="fa fa-angle-down rotate-icon"></i>
+				                  </h5>
+				              </a>
+				          </div>
+
+				          <!-- Card body -->
+				          <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+				              <div class="card-body">
+				                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
+				                  non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+				                  3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+				                  shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+				                  sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+				                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+				                  labore sustainable VHS.
+				              </div>
+				          </div>
+				      </div>
+				      <!-- Accordion card -->
+				  </div>
+				  <!--/.Accordion wrapper-->
+
+
+        </section>
+        <!--Section: Accordion-->
+
+    </div>
+    
+
+	</main>
+	<!--Main layout-->
+
+	<!--Footer-->
+	<!-- Footer -->
+	<footer class="page-footer font-small indigo">
+
+	  <!-- Copyright -->
+	  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+	    <a href="https://mdbootstrap.com/bootstrap-tutorial/"> Booust Voting System</a>
+	  </div>
+	  <!-- Copyright -->
+
+	</footer>
+<!-- Footer -->
+	<!--Footer-->
+	<script src="mdb/js/mdb.min.js"></script>
+	<script src="mdb/js/init.js"></script>
+	<script>
+    // Minimalist chart
+    $(function () {
+        $('.min-chart#chart-sales').easyPieChart({
+            barColor: "#4caf50",
+            onStep: function (from, to, percent) {
+                $(this.el).find('.percent').text(Math.round(percent));
+            }
+        });
+    });
+     $(function () {
+        $('#folder-1').click(function () {
+            toastr.error("Folder 1 has been clicked!", "Folder 1", {
+                "positionClass": "toast-top-right",
+            });
+        });
+    });
+</script>
+	
+</body>
+</html>
+	
